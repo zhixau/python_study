@@ -53,9 +53,28 @@ class Solution2(object):
 
         return (len(nums), nums)
 
+class Solution3(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        assert isinstance(nums, list)
+
+        if len(nums) == 0:
+            return 0
+
+        j = 0
+        for i in range(1, len(nums)):
+            if nums[j] != nums[j]:
+                i = i + 1
+                nums[i] = nums[j]
+
+        return i + 1
+
 
 if __name__ == '__main__':
-    s = Solution2()
+    s = Solution3()
     nums = [1, 1, 2]
     # nums = [0,0,1,1,1,2,2,3,3,4]
     new_length, new_nums = s.removeDuplicates(nums)
