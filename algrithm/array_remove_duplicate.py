@@ -64,9 +64,9 @@ class Solution3(object):
         if len(nums) == 0:
             return 0
 
-        j = 0
-        for i in range(1, len(nums)):
-            if nums[j] != nums[j]:
+        i = 0
+        for j in range(1, len(nums)):
+            if nums[i] != nums[j]:
                 i = i + 1
                 nums[i] = nums[j]
 
@@ -75,8 +75,8 @@ class Solution3(object):
 
 if __name__ == '__main__':
     s = Solution3()
-    nums = [1, 1, 2]
-    # nums = [0,0,1,1,1,2,2,3,3,4]
-    new_length, new_nums = s.removeDuplicates(nums)
+    # nums = [1, 1, 2]
+    nums = [0,0,1,1,1,2,2,3,3,4]
+    new_length = s.removeDuplicates(nums)
 
-    print(new_length, new_nums)
+    print(new_length)
